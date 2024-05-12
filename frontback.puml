@@ -1,0 +1,39 @@
+@startuml
+
+component "Test procedure" as tp {
+
+    component Front as f {
+        component Source as fp
+        component Compiler as fc
+        component Docker as fd
+    }
+
+    component Back as b {
+        component Source as bp
+        component Compiler as bc
+        component Docker as bd
+    }
+
+    component "Test case" as t
+}
+
+fp -- fc
+fc -- fd
+
+bp -- bc
+bc -- bd
+
+fd -- t
+bd -- t
+
+PR1 -> bp
+PR2 -> fp
+
+Dockerfile1 --> bd
+Dockerfile2 --> fd
+
+Rules -right-> t
+
+t -down-> Result
+
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+
+component "Test procedure" as tp {
+    component Source as p
+    component Linter as t
+}
+
+p -- t
+
+PR -right-> p
+Rules -right-> t
+
+t -down-> Result
+
+@enduml
