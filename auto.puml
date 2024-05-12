@@ -1,0 +1,24 @@
+@startuml
+
+component Artefacts as a
+
+component Manifests as m
+
+component Rules as r
+
+component "Test procedure" as tp {
+    component "Test case" as t
+}
+
+a -down-> tp
+m -right-> tp
+r -right-> t
+
+component "Test manifest" as tm {
+    component "Result" as tr
+    component "Manifests" as tms
+}
+
+t -down-> tm
+
+@enduml

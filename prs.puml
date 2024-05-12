@@ -1,0 +1,27 @@
+@startuml
+
+component PR1
+component PR2
+component PR3
+component PR4
+component PR5
+
+PR1 -- PR2
+PR2 -- PR3
+PR3 -- PR4
+PR4 -- PR5
+PR1 -> linter1
+PR2 -> linter2
+linter2 -> unit2
+PR3 -> linter3
+linter3 -> unit3
+unit3 -> fuzzing3
+PR4 -> linter4
+linter4 -> unit4
+unit4 -> func4
+PR5 -> linter5
+linter5 -> unit5
+unit5 -> func5
+func5 -> integr5
+
+@enduml
